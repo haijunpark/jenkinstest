@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: cloud-oauth-config
-  namespace: webiso
+  namespace: security365
 data:
   SC_AUTH_HOST: "https://rclogin.security365.com"
   SC_AUTH_PORT: "9000"
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cloud-oauth-service
-  namespace: webiso
+  namespace: security365
   labels:
     app: cloud-oauth-service
 spec:
@@ -51,7 +51,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: cloud-oauth-service
-  namespace: webiso
+  namespace: security365
 spec:
   type: ClusterIP
   ports:
